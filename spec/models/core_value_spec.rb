@@ -12,6 +12,10 @@ describe CoreValue do
     context 'with values' do
       Given(:model) { CoreValue.create(name: "Honesty") }
       Then { model.persisted? == true }
+
+      Given(:model) { CoreValue.create(name: "Honesty", qualities: [Quality.first, Quality.second])}
+      Then { model.qualities.include?(Quality.first) == true}
+      And { model.qualities.include?(Quality.second) == true }
     end
   end
 end

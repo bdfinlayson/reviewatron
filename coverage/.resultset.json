@@ -23,7 +23,51 @@
         1,
         null
       ],
+      "/workspace/reviewatron/lib/seeder.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        20,
+        20,
+        20,
+        180,
+        null,
+        null,
+        null,
+        20,
+        20,
+        20,
+        180,
+        180,
+        180,
+        720,
+        null,
+        null,
+        null,
+        null,
+        20,
+        null,
+        null,
+        20,
+        200,
+        200,
+        200,
+        null,
+        null,
+        null
+      ],
       "/workspace/reviewatron/app/models/core_value.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/workspace/reviewatron/app/models/entry.rb": [
+        1,
+        1,
         1,
         1,
         1,
@@ -39,15 +83,6 @@
         null
       ],
       "/workspace/reviewatron/app/models/entry_quality.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/workspace/reviewatron/app/models/entry.rb": [
-        1,
-        1,
-        1,
         1,
         1,
         1,
@@ -84,6 +119,6 @@
         0
       ]
     },
-    "timestamp": 1462722411
+    "timestamp": 1462725070
   }
 }

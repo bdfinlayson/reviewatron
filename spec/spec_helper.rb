@@ -6,6 +6,7 @@ ENV['RAILS_ENV'] = 'test'
 
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'seeder'
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -49,5 +50,9 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
     mocks.syntax = :expect
+  end
+
+  config.before(:each) do
+    Seeder.populate
   end
 end
