@@ -5,6 +5,7 @@ describe Act do
     it { should have_many(:qualities).through(:act_qualities) }
     it { should have_many(:act_qualities) }
     it { should have_many(:challenges) }
+    it { should have_many(:benefits) }
 
     Given(:model) { Act.first }
 
@@ -15,5 +16,9 @@ describe Act do
     And { model.core_values.include?(Quality.first.core_value) == true }
     And { model.core_values.include?(Quality.second.core_value) == true }
     And { model.user == User.first }
+
+    When { model.update_attribute(:benefits, [Benefit.third, Benefit.fourth]) }
+    Then { model.benefits.include?(Benefit.third) == true }
+    And { model.benefits.include?(Benefit.fourth) == true }
   end
 end
