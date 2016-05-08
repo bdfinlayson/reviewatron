@@ -23,7 +23,7 @@ class Seeder
     # create test user
     user = User.create(email: 'test@test.com', password: 'password')
 
-    # create some entries
+    # create acts
     10.times do
       e = Act.new(user: user, description: FFaker::Lorem.paragraph)
       e.qualities.push([Quality.all.sample])
