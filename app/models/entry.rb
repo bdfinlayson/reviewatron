@@ -1,4 +1,6 @@
 class Entry < ActiveRecord::Base
-  belongs_to :user
   validates_presence_of :content, :user_id
+  belongs_to :user
+  has_many :entry_core_values
+  has_many :core_values, through: :entry_core_values
 end
