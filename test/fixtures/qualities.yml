@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  core_value_id: 1
+  assertion: MyString
+  question: MyString
+
+two:
+  core_value_id: 1
+  assertion: MyString
+  question: MyString

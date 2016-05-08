@@ -3,4 +3,6 @@ class Entry < ActiveRecord::Base
   belongs_to :user
   has_many :entry_core_values
   has_many :core_values, through: :entry_core_values
+  has_many :entry_qualities
+  has_many :qualities, through: :entry_qualities
 end
