@@ -29,5 +29,16 @@ class Seeder
       e.qualities.push([Quality.all.sample])
       e.save
     end
+
+    # create challenges
+    Act.all.each do |act|
+      act.challenges.push Challenge.create(description: FFaker::Lorem.paragraph)
+    end
+
+    # create solutions
+    Challenge.all.each do |challenge|
+      challenge.solution = Solution.new(description: FFaker::Lorem.paragraph)
+      challenge.save
+    end
   end
 end
