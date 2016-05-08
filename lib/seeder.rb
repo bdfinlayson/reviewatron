@@ -10,7 +10,7 @@ class Seeder
     end
 
     # create qualities
-    seed = Rails.root.join('lib', 'data', 'qualities.yml')
+    seed = Rails.root.join(DATA_REPO, 'qualities.yml')
     config = YAML::load_file(seed)
     config.each do |qualities|
       name = qualities.shift
