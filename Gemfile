@@ -15,6 +15,9 @@ gem 'puma'
 gem 'ffaker'
 gem "trailblazer-rails"
 gem "cells"
+gem 'cells-erb'
+gem 'trailblazer-cells'
+gem 'cells-rails'
 
 group :production do
   gem 'rails_12factor'

@@ -1,6 +1,6 @@
-class ActsController < ApplicationController
+ class ActsController < ApplicationController
   def new
-    render 'acts/new'
+    render html: cell(Acts::Form::Cell::Show, Act.new), layout: 'application'
   end
 
   def create
@@ -15,6 +15,4 @@ class ActsController < ApplicationController
   def act_params
     params.require(:act).permit(:description).merge(user: current_user)
   end
-
-
 end
