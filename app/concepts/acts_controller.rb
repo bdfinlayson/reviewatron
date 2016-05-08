@@ -4,15 +4,13 @@
   end
 
   def create
-    @act = Act.new(act_params)
-    if @act.save
-      redirect_to new_act_path, :flash => { :notice => "Act created!" }
-    else
-      redirect_to new_act_path, :flash => { :alert => "Failed to save. Try again." }
+    run Acts::Create do
+      return redirect_to new_act_path, :flash => { :notice => "Act created!" }
     end
+    redirect_to new_act_path, :flash => { :alert => "Failed to save. Try again." }
   end
 
-  def act_params
-    params.require(:act).permit(:description).merge(user: current_user)
+  def process_params!(params)
+    params.require(:act).merge!(user: current_user)
   end
 end
