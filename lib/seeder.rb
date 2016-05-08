@@ -25,7 +25,7 @@ class Seeder
 
     # create some entries
     10.times do
-      e = Entry.new(user: user, content: FFaker::Lorem.paragraph)
+      e = Act.new(user: user, description: FFaker::Lorem.paragraph)
       e.qualities.push([Quality.all.sample])
       e.save
     end

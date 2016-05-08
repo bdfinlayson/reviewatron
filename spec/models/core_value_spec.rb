@@ -1,7 +1,7 @@
 describe CoreValue do
   context 'associations' do
     it { should have_many(:qualities) }
-    it { should have_many(:entries).through(:qualities) }
+    it { should have_many(:acts).through(:qualities) }
   end
 
   context 'validations' do

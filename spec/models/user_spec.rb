@@ -1,12 +1,12 @@
 describe User do
   context 'associtions' do
-    it { should have_many(:entries) }
-    it { should have_many(:qualities).through(:entries) }
+    it { should have_many(:acts) }
+    it { should have_many(:qualities).through(:acts) }
 
     Given(:user) { User.first }
 
-    When { Entry.first.update_attribute(:qualities, [Quality.first]) }
-    Then { user.entries.include?(Entry.first) == true }
-    Then { user.qualities.include?(Entry.first.qualities.first) == true }
+    When { Act.first.update_attribute(:qualities, [Quality.first]) }
+    Then { user.acts.include?(Act.first) == true }
+    Then { user.qualities.include?(Act.first.qualities.first) == true }
   end
 end

@@ -1,11 +1,11 @@
-describe Entry do
+describe Act do
   context 'associations' do
     it { should belong_to(:user) }
     it { should have_many(:core_values).through(:qualities) }
-    it { should have_many(:qualities).through(:entry_qualities) }
-    it { should have_many(:entry_qualities) }
+    it { should have_many(:qualities).through(:act_qualities) }
+    it { should have_many(:act_qualities) }
 
-    Given(:model) { Entry.first }
+    Given(:model) { Act.first }
 
     When { model.qualities.push [Quality.first, Quality.second] }
 
