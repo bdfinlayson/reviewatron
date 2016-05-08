@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'ffaker'
+gem "trailblazer-rails"
+gem "cells"
 
 group :production do
   gem 'rails_12factor'
@@ -23,7 +25,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'pry'
+  gem 'pry-byebug'
   gem 'spring'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
