@@ -1,7 +1,19 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+DATA_REPO = File.join('lib', 'data')
+
+#create core values
+seed = Rails.root.join(DATA_REPO, 'core_values.yml')
+config = YAML::load_file(seed)
+config['core_values'].each do |name|
+  CoreValue.create(name: name)
+end
+
+#create qualities
+seed = Rails.root.join('lib', 'data', 'qualities.yml')
+config = YAML::load_file(seed)
+config.each do |qualities|
+  name = qualities.shift
+  value = CoreValue.find_by(name: name)
+  qualities.first.each do |quality|
+    value.qualities.push Quality.create(assertion: quality['assertion'], question: quality['question'])
+  end
+end
