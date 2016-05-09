@@ -3,5 +3,4 @@ module Acts::Form::Cell
     Given(:model) { described_class.(Act.first).model }
     Then { model == Act.first }
   end
-
 end
