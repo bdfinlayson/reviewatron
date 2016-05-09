@@ -1,8 +1,7 @@
-module Acts
-  describe Form do
-    it do
-      expect(described_class.(nil).blah).to eq true
-    end
+module Acts::Form::Cell
+  describe Show do
+    Given(:model) { described_class.(Act.first).model }
+    Then { model == Act.first }
   end
 
 end
