@@ -5,6 +5,7 @@ module Acts
 
     contract do
       property :description
+      property :user
 
       validates :description, presence: true
     end

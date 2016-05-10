@@ -6,9 +6,9 @@ describe ActsController, type: :controller do
   end
 
   context '#create' do
-    # Given { sign_in User.first }
-    # When { post :create, act: { description: "blah", user: User.first } }
-    # Then { Act.last.description == 'blah' }
-    # And { Act.last.user == User.first }
+    Given { sign_in User.first }
+    When { post :create, act: { description: "blah" } }
+    Then { Act.last.description == 'blah' }
+    And { Act.last.user == User.first }
   end
 end
