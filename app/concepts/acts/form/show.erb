@@ -9,7 +9,7 @@
       <% end %>
       <option value=''></option>
       <% unselected_qualities.each do |q| %>
-        <option value='<%= q.id %>'><%= quality_option(q) %></option>
+        <option value='<%= q.id %>'><%= quality_assertion(q) %></option>
       <% end %>
     </select>
   </values>
