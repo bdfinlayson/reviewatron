@@ -1,6 +1,6 @@
- class ActsController < ApplicationController
+class ActsController < ApplicationController
   def new
-    render html: cell(Acts::Form::Cell::Show, Act.new), layout: 'application'
+    render html: cell(Acts::Form::Cell::Show, Acts::Create.present(Act.new).contract), layout: 'application'
   end
 
   def create
