@@ -8,5 +8,5 @@ $ ->
     labelField: 'name'
     searchField: [
       'id'
-      'name'
+      'description'
     ]
