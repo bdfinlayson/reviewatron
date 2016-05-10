@@ -5,8 +5,8 @@ $ ->
     persist: false
     maxItems: null
     valueField: 'id'
-    labelField: 'name'
+    labelField: 'assertion'
     searchField: [
       'id'
-      'description'
+      'assertion'
     ]

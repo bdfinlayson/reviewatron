@@ -23,5 +23,11 @@ module Acts::Form::Cell
         expect(model.unselected_qualities.count).to eq Quality.count - 2
       end
     end
+
+    context '#quality_assertion' do
+      Given(:c) { cell.(Act.first) }
+      When { Quality.first.update(assertion: "This is a test", core_value: CoreValue.find_by(name: "Honesty"))}
+      Then { c.quality_assertion(Quality.first) == 'This is a test (HONESTY)'}
+    end
   end
 end

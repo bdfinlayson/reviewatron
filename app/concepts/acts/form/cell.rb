@@ -7,5 +7,13 @@ module Acts::Form::Cell
       return Quality.all if qualities.empty?
       Quality.where.not(id: qualities.try(:map) {|x| x.try(:id)})
     end
+
+    def quality_assertion(q)
+      "#{q.assertion} #{value_name(q)}"
+    end
+
+    def value_name(q)
+      "(#{q.core_value.name.upcase})"
+    end
   end
 end

@@ -4,12 +4,12 @@
   <values class='control-group'>
     <label for='values'>
     <select id='values' multiple class='selectize' placeholder='Find core values...'>
-      <% qualities.each do |v| %>
-        <option selected value='<%= v.id %>'><%= v.assertion %></option>
+      <% qualities.each do |q| %>
+        <option selected value='<%= q.id %>'><%= q.assertion %></option>
       <% end %>
       <option value=''></option>
-      <% unselected_qualities.each do |v| %>
-        <option value='<%= v.id %>'><%= v.assertion %></option>
+      <% unselected_qualities.each do |q| %>
+        <option value='<%= q.id %>'><%= quality_option(q) %></option>
       <% end %>
     </select>
   </values>
