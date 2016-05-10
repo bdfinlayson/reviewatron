@@ -1,5 +1,19 @@
 <%= form_for model do |f| %>
   <%= f.label :description %>
   <%= f.text_area :description %>
+  <values class='control-group'>
+    <label for='values'>
+    <select id='values' multiple class='selectize' placeholder='Find core values...'>
+      <% core_values.each do |v| %>
+        <option selected value='<%= v.id %>'><%= v.name %></option>
+      <% end %>
+      <option value=''></option>
+      <% unselected_core_values.each do |v| %>
+        <option value='<%= v.id %>'><%= v.name %></option>
+      <% end %>
+    </select>
+  </values>
+
+
   <%= f.submit %>
 <% end %>
