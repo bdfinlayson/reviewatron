@@ -24,7 +24,7 @@ class Seeder
     user = User.create(email: 'test@test.com', password: 'password')
 
     # create acts
-    10.times do
+    3.times do
       e = Act.new(user: user, description: FFaker::Lorem.paragraph)
       e.qualities.push([Quality.all.sample])
       e.save
@@ -37,7 +37,7 @@ class Seeder
 
     # create solutions
     Challenge.all.each do |challenge|
-      challenge.solution = Solution.new(description: FFaker::Lorem.paragraph)
+      challenge.solutions << Solution.new(description: FFaker::Lorem.paragraph)
       challenge.save
     end
 
