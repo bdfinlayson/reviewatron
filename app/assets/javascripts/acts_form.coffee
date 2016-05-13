@@ -6,4 +6,9 @@ $ ->
     maxItems: null
 
   $('addchallenge').on 'click', ->
-    $('addchallenge').prepend('<br><input class="problem" name="problem" placeholder="Describe your challenging problem here"><br><input class="solution" placeholder="Describe how you solved the problem here">')
+    $('addchallenge').prepend('
+      <br>
+      <input class="problem" name="problem" placeholder="Describe your challenging problem here">
+      <br>
+      <input class="solution" placeholder="Describe how you solved the problem here">'
+      )
