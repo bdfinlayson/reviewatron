@@ -30,15 +30,15 @@ class Seeder
       e.save
     end
 
-    # create challenges
+    # create problems
     Act.all.each do |act|
-      act.challenges.push Challenge.create(description: FFaker::Lorem.paragraph)
+      act.problems.push Problem.create(description: FFaker::Lorem.paragraph)
     end
 
     # create solutions
-    Challenge.all.each do |challenge|
-      challenge.solutions << Solution.new(description: FFaker::Lorem.paragraph)
-      challenge.save
+    Problem.all.each do |problem|
+      problem.solutions << Solution.new(description: FFaker::Lorem.paragraph)
+      problem.save
     end
 
     # create benefits

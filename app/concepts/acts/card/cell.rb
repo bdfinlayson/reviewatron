@@ -4,7 +4,7 @@ module Acts::Card::Cell
     property :user
     property :core_values
     property :qualities
-    property :challenges
+    property :problems
     property :solutions
     property :benefits
   end

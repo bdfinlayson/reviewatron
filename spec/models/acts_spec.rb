@@ -4,7 +4,7 @@ describe Act do
     it { should have_many(:core_values).through(:qualities) }
     it { should have_many(:qualities).through(:act_qualities) }
     it { should have_many(:act_qualities) }
-    it { should have_many(:challenges) }
+    it { should have_many(:problems) }
     it { should have_many(:benefits) }
 
     Given(:model) { Act.first }

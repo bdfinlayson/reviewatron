@@ -19,6 +19,7 @@ gem 'cells-erb'
 gem 'trailblazer-cells'
 gem 'cells-rails'
 gem 'selectize-rails'
+gem 'railroady'
 
 group :production do
   gem 'rails_12factor'

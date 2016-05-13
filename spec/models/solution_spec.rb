@@ -1,10 +1,10 @@
 describe Solution do
   context 'associations' do
-    it { should belong_to(:challenge) }
+    it { should belong_to(:problem) }
 
     Given(:model) { Solution.first }
 
-    When { model.update_attribute(:challenge, Challenge.first) }
-    Then { model.challenge == Challenge.first }
+    When { model.update_attribute(:problem, Problem.first) }
+    Then { model.problem == Problem.first }
   end
 end

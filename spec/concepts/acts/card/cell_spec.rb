@@ -5,7 +5,7 @@ describe Acts::Card::Cell::Show do
       user
       core_values
       qualities
-      challenges
+      problems
       solutions
       benefits
     ).each do |p|

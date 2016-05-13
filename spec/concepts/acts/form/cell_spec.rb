@@ -29,5 +29,12 @@ module Acts::Form::Cell
       When { Quality.first.update(assertion: "This is a test", core_value: CoreValue.find_by(name: "Honesty"))}
       Then { c.quality_assertion(Quality.first) == 'This is a test (HONESTY)'}
     end
+
+    # context '#problem_solutions' do
+    #   it 'returns solutions belonging to the problem' do
+    #     Act.first.problems.destroy_all
+    #     Act.first.problems.first
+    #   end
+    # end
   end
 end

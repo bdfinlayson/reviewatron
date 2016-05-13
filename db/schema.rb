@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160508182328) do
+ActiveRecord::Schema.define(version: 20160513020634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,20 +39,20 @@ ActiveRecord::Schema.define(version: 20160508182328) do
 
   add_index "benefits", ["act_id"], name: "index_benefits_on_act_id", using: :btree
 
-  create_table "challenges", force: :cascade do |t|
+  create_table "core_values", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "problems", force: :cascade do |t|
     t.text     "description"
     t.integer  "act_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  add_index "challenges", ["act_id"], name: "index_challenges_on_act_id", using: :btree
-
-  create_table "core_values", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  add_index "problems", ["act_id"], name: "index_problems_on_act_id", using: :btree
 
   create_table "qualities", force: :cascade do |t|
     t.integer  "core_value_id"
@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20160508182328) do
 
   create_table "solutions", force: :cascade do |t|
     t.text     "description"
-    t.integer  "challenge_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "problem_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "solutions", ["challenge_id"], name: "index_solutions_on_challenge_id", using: :btree
+  add_index "solutions", ["problem_id"], name: "index_solutions_on_problem_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
