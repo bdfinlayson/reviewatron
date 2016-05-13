@@ -7,7 +7,7 @@ class ActsController < ApplicationController
     run Acts::Create do
       return redirect_to new_act_path, :flash => { :notice => "Act created!" }
     end
-    redirect_to new_act_path, :flash => { :alert => "Failed to save. Try again." }
+    redirect_to new_act_path, :flash => { :alert => @form.errors.full_messages.join(', ') }
   end
 
   def process_params!(params)

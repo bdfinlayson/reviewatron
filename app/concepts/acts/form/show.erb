@@ -1,9 +1,9 @@
 <%= form_for model do |f| %>
   <%= f.label :description %>
-  <%= f.text_area :description %>
+  <%= f.text_area :description, placeholder: "Briefly describe your act" %>
   <values class='control-group'>
     <label for='values'>
-    <select id='values' multiple class='selectize' placeholder='Find core values...'>
+    <select name="qualities[]" id='values' multiple class='selectize' placeholder='Find core values...'>
       <% qualities.each do |q| %>
         <option selected value='<%= q.id %>'><%= q.assertion %></option>
       <% end %>
@@ -16,6 +16,9 @@
   <problemsolution>
     <addchallenge>+ Add Challenge</addchallenge>
   </problemsolution>
+  <benefit>
+    <addbenefit>+ Add Benefit</addbenefit>
+  </benefit>
 
 
   <%= f.submit %>

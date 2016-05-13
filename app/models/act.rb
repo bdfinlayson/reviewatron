@@ -5,5 +5,6 @@ class Act < ActiveRecord::Base
   has_many :act_qualities
   has_many :qualities, through: :act_qualities
   has_many :problems
+  has_many :solutions, through: :problems
   has_many :benefits
 end
