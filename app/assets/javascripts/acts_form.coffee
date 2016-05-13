@@ -4,9 +4,6 @@ $ ->
     plugins: ['remove_button']
     persist: false
     maxItems: null
-    valueField: 'id'
-    labelField: 'assertion'
-    searchField: [
-      'id'
-      'assertion'
-    ]
+
+  $('addchallenge').on 'click', ->
+    $('addchallenge').prepend('<br><input class="problem" name="problem" placeholder="Describe your challenging problem here"><br><input class="solution" placeholder="Describe how you solved the problem here">')
