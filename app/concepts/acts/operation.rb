@@ -22,12 +22,12 @@ module Acts
     end
 
     def params!(params)
-      params[:act][:qualities] = Quality.where(id: params[:qualities])
+      params[:act][:qualities] = Quality.where(id: params[:act][:qualities])
       params[:act][:problems] =
-        Array(params[:problems]).each_with_index.map do |problem, i|
+        Array(params[:act][:problems]).each_with_index.map do |problem, i|
           Problem.create(
             description: problem,
-            solutions: [Solution.create(description: params[:solutions][i])]
+            solutions: [Solution.create(description: params[:act][:solutions][i])]
           )
         end
       params[:act][:solutions] =
@@ -35,7 +35,7 @@ module Acts
           problem_obj.solutions.first
         end
       params[:act][:benefits] =
-        Array(params[:benefits]).map {|benefit| Benefit.create(description: benefit)}
+        Array(params[:act][:benefits]).map {|benefit| Benefit.create(description: benefit)}
       params[:act]
     end
   end
