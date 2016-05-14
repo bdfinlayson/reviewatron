@@ -20,6 +20,9 @@ gem 'trailblazer-cells'
 gem 'cells-rails'
 gem 'selectize-rails'
 gem 'railroady'
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
 
 group :production do
   gem 'rails_12factor'

@@ -14,12 +14,16 @@
     </select>
   </values>
   <challenges>
+    <appendtarget></appendtarget>
     <addchallenge>+ Add Challenge</addchallenge>
   </challenges>
+  <br>
   <benefit>
+    <appendtarget></appendtarget>
     <addbenefit>+ Add Benefit</addbenefit>
   </benefit>
-
-
-  <%= f.submit %>
+  <br>
+  <%= f.submit 'Create Act', id:'submit-button' %>
 <% end %>
+<br>
+<button id='preview-button'>Preview</button>
