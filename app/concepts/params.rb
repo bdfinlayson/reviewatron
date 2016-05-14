@@ -8,18 +8,23 @@ module Params
     end
 
     def process(params)
+      params[:act][:description] = remove_ending_punctuation(params[:act][:desription])
       params[:act][:qualities] = Quality.where(id: params[:act][:qualities])
       params[:act][:challenges] = params[:act][:challenges].values if params[:act][:challenges].respond_to? :values
       params[:act][:challenges] =
         Array(params[:act][:challenges]).each.map do |challenge|
           Challenge.create(
-            problem: challenge.first,
-            solution: challenge.second
+            problem: remove_ending_punctuation(challenge.first),
+            solution: remove_ending_punctuation(challenge.second)
           )
         end
       params[:act][:benefits] =
-        Array(params[:act][:benefits]).map {|benefit| Benefit.create(description: benefit)}
+        Array(params[:act][:benefits]).map {|benefit| Benefit.create(description: remove_ending_punctuation(benefit))}
       params[:act]
+    end
+
+    def remove_ending_punctuation(str)
+      str.gsub(/(\.|\,|\;|\:)$/, "").squish
     end
   end
 end

@@ -1,9 +1,18 @@
-<% if challenges.present? %>
-  <h4>Challenges</h4>
-  <% challenges.each_with_index do |c, i| %>
-    <p><%= i + 1 %>. <%= c.problem %> SOLVED BY:</p>
-    <ol>
-      <li type='circle'><%= c.solution %></li>
-    </ol>
+<span><%= description %>.
+  <% if challenges.present? %>
+    <span> This presented the following <%= 'challenge'.pluralize(challenges.count) %>:</span>
+    <% challenges.each_with_index do |c, i| %>
+      <span> (<%= i + 1 %>) <%= c.problem %><%= (i >= 1 && challenges.count > 1) ? '.' : ';' %></span>
+    <% end %>
+    <span> I addressed <%= challenges.count > 1 ? 'these' : 'this' %> <%= 'challenge'.pluralize(challenges.count) %> by doing the folowing: </span>
+    <% challenges.each_with_index do |c, i| %>
+      <span> (<%= i  + 1 %>) <%= c.solution %><%= (i >= 1 && challenges.count > 1) ? '.' : ';' %></span>
+    <% end %>
   <% end %>
-<% end %>
+  <% if benefits.present? %>
+    <span> This benefited Metova for the following <%= 'reason'.pluralize(benefits.count) %>: </span>
+    <% benefits.each_with_index do |b, i| %>
+      <span> (<%= i  + 1 %>) <%= b.description %><%= (i >= 1 && challenges.count > 1) ? '.' : ';' %></span>
+    <% end %>
+  <% end %>
+</span>
