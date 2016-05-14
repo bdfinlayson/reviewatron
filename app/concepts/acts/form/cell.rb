@@ -1,5 +1,5 @@
 module Acts::Form::Cell
-  class Show < Acts::Card::Cell::Show
+  class Show < Acts::Dashboard::Card::Cell::Show
     include ActionView::RecordIdentifier
     include ActionView::Helpers::FormHelper
 

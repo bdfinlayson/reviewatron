@@ -3,6 +3,10 @@ class ActsController < ApplicationController
     render html: cell(Acts::Form::Cell::Show, Act.new), layout: 'application'
   end
 
+  def index
+    render html: cell(Acts::Dashboard::Cell::Index, current_user), layout: 'application'
+  end
+
   def create
     run Acts::Create do
       return redirect_to new_act_path, :flash => { :notice => "Act created!" }

@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require_tree .
 //= require selectize
-//= require acts_form
+//= require acts/form/form
+//= require acts/dashboard/card/card

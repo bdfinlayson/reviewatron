@@ -43,4 +43,5 @@ end
 group :test do
   gem 'rspec-given'
   gem 'simplecov', :require => false
+  gem "shoulda-kept-respond-with-content-type"
 end

@@ -35,4 +35,16 @@ describe ActsController, type: :controller do
       expect(flash[:alert]).to be_present
     end
   end
+
+  context '#index' do
+    context 'success' do
+      before do
+        sign_in User.first
+        get :index
+      end
+      it { is_expected.to respond_with :success }
+      it { is_expected.to respond_with_content_type :html }
+      it { is_expected.to render_with_layout :application }
+    end
+  end
 end

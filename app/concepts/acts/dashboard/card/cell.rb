@@ -1,7 +1,6 @@
-module Acts::Card::Cell
+module Acts::Dashboard::Card::Cell
   class Show < Trailblazer::Cell
     property :description
-    property :user
     property :core_values
     property :qualities
     property :problems
