@@ -10,7 +10,7 @@ module Params
     def process(params)
       params[:act][:qualities] = Quality.where(id: params[:act][:qualities])
       params[:act][:challenges] =
-        Array(params[:act][:challenges]).each do |challenge|
+        Array(params[:act][:challenges]).each.map do |challenge|
           Challenge.create(
             problem: challenge.first,
             solution: challenge.second

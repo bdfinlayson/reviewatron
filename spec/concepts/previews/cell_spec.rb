@@ -3,7 +3,6 @@ describe Previews::Cell::Index do
     %w(
       description
       challenges
-      solutions
       benefits
       qualities
     ).each do |p|
