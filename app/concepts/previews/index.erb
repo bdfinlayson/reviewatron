@@ -1,0 +1,9 @@
+<% if challenges.present? %>
+  <h4>Challenges</h4>
+  <% challenges.each_with_index do |c, i| %>
+    <p><%= i + 1 %>. <%= c.problem %> SOLVED BY:</p>
+    <ol>
+      <li type='circle'><%= c.solution %></li>
+    </ol>
+  <% end %>
+<% end %>

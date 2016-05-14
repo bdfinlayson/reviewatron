@@ -7,8 +7,7 @@ module Acts
       property :description
       property :user
       property :benefits
-      property :problems
-      # property :solutions
+      property :challenges
       property :qualities
 
       validates :description, presence: true
@@ -22,21 +21,7 @@ module Acts
     end
 
     def params!(params)
-      params[:act][:qualities] = Quality.where(id: params[:act][:qualities])
-      params[:act][:problems] =
-        Array(params[:act][:problems]).each_with_index.map do |problem, i|
-          Problem.create(
-            description: problem,
-            solutions: [Solution.create(description: params[:act][:solutions][i])]
-          )
-        end
-      params[:act][:solutions] =
-        Array(params[:act][:problems]).map do |problem_obj|
-          problem_obj.solutions.first
-        end
-      params[:act][:benefits] =
-        Array(params[:act][:benefits]).map {|benefit| Benefit.create(description: benefit)}
-      params[:act]
+      Params::Service.new(params).processed_params
     end
   end
 end

@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :acts
   has_many :qualities, through: :acts
-  has_many :problems, through: :acts
-  has_many :solutions, through: :problems
+  has_many :challenges, through: :acts
   has_many :benefits, through: :acts
 end

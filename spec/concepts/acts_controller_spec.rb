@@ -16,17 +16,14 @@ describe ActsController, type: :controller do
         act: {
           description: "blah",
           qualities: [Quality.first.id, Quality.second.id, Quality.third.id],
-          problems: ["car trouble", "challenging code"],
-          solutions: ["got car fixed", "studied longer hours"],
+          challenges: [["car trouble", "got car fixed"], ["challenging code", "studied longer hours"]],
           benefits: ["can get to work on time", "more confident programmer"]
            }}.to change(Act, :count).by(1)
       expect(Act.last.description).to eq 'blah'
       expect(Act.last.user).to eq User.first
       expect(Act.last.qualities).to match_array [Quality.first, Quality.second, Quality.third]
-      expect(Act.last.problems).to match_array Problem.last(2)
-      expect(Act.last.solutions).to match_array Solution.last(2)
+      expect(Act.last.challenges).to match_array Challenge.last(2)
       expect(Act.last.benefits).to match_array Benefit.last(2)
-      expect(Problem.last.solutions.first).to eq Solution.last
       expect(flash[:notice]).to be_present
     end
 

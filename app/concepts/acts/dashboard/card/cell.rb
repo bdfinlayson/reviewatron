@@ -3,7 +3,7 @@ module Acts::Dashboard::Card::Cell
     property :description
     property :core_values
     property :qualities
-    property :problems
+    property :challenges
     property :solutions
     property :benefits
   end
