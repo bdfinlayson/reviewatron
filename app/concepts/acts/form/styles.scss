@@ -8,6 +8,22 @@
   text-align: center;
 }
 
+.challenge-input-wrapper {
+  .challenge-inputs {
+  }
+}
+
+.remove-challenge-x, .remove-benefit-x {
+  font-size: xx-large;
+  &:after {
+    content: '\d7'
+  }
+}
+
+.add-challenge {
+}
+
+
 
 // modal styles
 

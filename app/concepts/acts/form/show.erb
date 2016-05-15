@@ -16,14 +16,18 @@
   <challenges>
     <label>What challenges were faced? How were they overcome?</label>
     <appendtarget></appendtarget>
-    <addchallenge>+ Add Challenge</addchallenge>
+    <div class='add-challenge'>
+      <addchallenge>+ Add Challenge</addchallenge>
+    </div>
   </challenges>
   <br>
-  <benefit>
-    <label>How does this benefit Metova?</label>
-    <appendtarget></appendtarget>
-    <addbenefit>+ Add Benefit</addbenefit>
-  </benefit>
+  <div>
+    <benefit>
+      <label>How does this benefit Metova?</label>
+      <appendtarget></appendtarget>
+      <addbenefit>+ Add Benefit</addbenefit>
+    </benefit>
+  </div>
   <br>
   <%= f.submit 'Create Act', id:'submit-button' %>
 <% end %>

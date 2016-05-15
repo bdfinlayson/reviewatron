@@ -1,6 +1,7 @@
-@import 'bourbon';
-@import 'neat';
-@import 'base/base';
+@import "normalize";
+@import "bourbon";
+@import "base/base";
+@import "neat";
 @import 'selectize';
 @import '../concepts/acts/form/styles';
 @import '../concepts/acts/dashboard/card/styles';

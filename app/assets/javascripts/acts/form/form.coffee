@@ -3,21 +3,44 @@ $ ->
   challengeCount = 0
   benefitCount = 0
 
+
   $('#values').selectize
     plugins: ['remove_button']
     persist: false
     maxItems: null
 
+  $(document.body).on 'click', '.remove-challenge-x', ->
+    if confirm "Are you sure?"
+      $(this).parent().parent().remove()
+
+  $(document.body).on 'click', '.remove-benefit-x', ->
+    if confirm "Are you sure?"
+      $(this).parent().parent().remove()
+
   $('addchallenge').on 'click', ->
-    $(@).prev().append("
-        <span>Problem #{challengeCount + 1}:</span><textarea name='act[challenges][#{challengeCount}][]' class='problem' placeholder='For example, you could say: \"Deadlines made it challenging to write tests\"'></textarea>
-        <span>Solution to Problem #{challengeCount + 1}:</span><textarea name='act[challenges][#{challengeCount}][]' class='solution' placeholder='For example, you could say: \"We explained the need for testing to the client and were given more time\"'></textarea>
+    $(@).parent().prev().append("
+      <div class='challenge-input-wrapper'>
+        <div class='challenge-inputs'>
+          <span>Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='problem' placeholder='For example, you could say: \"Deadlines made it challenging to write tests\"'></textarea>
+          <span>Solution to Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='solution' placeholder='For example, you could say: \"We explained the need for testing to the client and were given more time\"'></textarea>
+        </div>
+        <div class='remove-challenge-wrapper'>
+          <div class='remove-challenge-x'></div>
+        </div>
+      </div>
       ")
     challengeCount++
 
   $('addbenefit').on 'click', ->
     $(@).prev().append("
-      <span>Benefit #{benefitCount + 1}:</span><textarea class='benefit' name='act[benefits][]' placeholder='For example, you could say: \"Client satisfaction was raised following fewer incidences of bug reports due to greater test coverage\"'></textarea>
+    <div class='benefit-input-wrapper'>
+      <div class='benefit-input'>
+        <span>Benefit:</span><textarea class='benefit' name='act[benefits][]' placeholder='For example, you could say: \"Client satisfaction was raised following fewer incidences of bug reports due to greater test coverage\"'></textarea>
+      </div>
+      <div class='remove-benefit-wrapper'>
+        <div class='remove-benefit-x'></div>
+      </div>
+    </div>
     ")
     benefitCount++
 

@@ -23,6 +23,7 @@ gem 'railroady'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
+gem 'sass'
 
 group :production do
   gem 'rails_12factor'
