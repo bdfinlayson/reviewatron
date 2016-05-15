@@ -46,6 +46,18 @@ $ ->
 
   $('#preview-button').on 'click', ->
     $(document).find('modalcontent').empty()
+    formData = buildFormData()
+    $.ajax
+      url: '/previews.json'
+      type: 'POST'
+      dataType: 'html'
+      data: formData
+      success: (response) =>
+        $(document).find('modalcontent').append(response)
+      error: ->
+        alert 'Unable to generate preview. Please ensure all input fields are filled'
+
+  buildFormData = ->
     description = $("textarea[name='act[description]']").val()
     qualities = []
     $('.item').each ->
@@ -72,15 +84,6 @@ $ ->
         benefits: benefits
       }
     }
-    $.ajax
-      url: '/previews.json'
-      type: 'POST'
-      dataType: 'html'
-      data: formData
-      success: (response) =>
-        $(document).find('modalcontent').append(response)
-      error: ->
-        alert 'Unable to generate preview. Please ensure all input fields are filled'
 
 # modal js
 
