@@ -22,3 +22,9 @@ $ ->
     benefitCount++
 
   $('#preview-button').on 'click', ->
+    $.ajax
+      url: '/previews.json'
+      type: 'POST'
+      data: { act: {description: "my preview", qualities: [1]}}
+      success: (response) ->
+        alert response.html

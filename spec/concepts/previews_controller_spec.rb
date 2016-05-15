@@ -1,8 +1,8 @@
 describe PreviewsController, type: :controller do
-  context '#index' do
+  context '#create' do
     before do
       sign_in User.first
-      get :index,
+      post :create,
         act: {
           description: "blah",
           qualities: [Quality.first.id, Quality.second.id, Quality.third.id],
