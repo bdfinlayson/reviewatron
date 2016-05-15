@@ -1,8 +1,8 @@
 <%= form_for model do |f| %>
-  <%= f.label :description %>
-  <%= f.text_area :description, placeholder: "Briefly describe your act" %>
+  <%= f.label :description, "What did you do?" %>
+  <%= f.text_area :description, placeholder: 'For example, you could say: "I raised awareness about the need for greater test coverage"' %>
   <values class='control-group'>
-    <label for='values'>
+    <label for='values'>What Core Values were on display?</label>
     <select name="act[qualities][]" id='values' multiple class='selectize' placeholder='Find core values...'>
       <% qualities.each do |q| %>
         <option selected value='<%= q.id %>'><%= q.assertion %></option>
@@ -14,11 +14,13 @@
     </select>
   </values>
   <challenges>
+    <label>What challenges were faced? How were they overcome?</label>
     <appendtarget></appendtarget>
     <addchallenge>+ Add Challenge</addchallenge>
   </challenges>
   <br>
   <benefit>
+    <label>How does this benefit Metova?</label>
     <appendtarget></appendtarget>
     <addbenefit>+ Add Benefit</addbenefit>
   </benefit>
