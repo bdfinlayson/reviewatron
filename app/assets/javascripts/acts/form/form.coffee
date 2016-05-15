@@ -25,6 +25,9 @@ $ ->
     $.ajax
       url: '/previews.json'
       type: 'POST'
-      data: { act: {description: "my preview", qualities: [1]}}
-      success: (response) ->
-        alert response.html
+      dataType: 'html'
+      data: { act: {description: "my preview", challenges: [['went to sleep', 'drink coffee']]}}
+      success: (response) =>
+        $(@).parent().append(response)
+      error: ->
+        alert 'Unable to generate preview. Please ensure all input fields are filled'
