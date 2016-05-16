@@ -1,18 +1,18 @@
 <span><%= description %>.
   <% if challenges.present? %>
-    <span> This presented the following <%= 'challenge'.pluralize(challenges.count) %>:</span>
+    <span> In doing this, the  <%= 'challenge'.pluralize(challenges.size) %> I faced <%= challenges.size > 1 ? 'were' : 'was' %>:</span>
     <% challenges.each_with_index do |c, i| %>
-      <span> (<%= i + 1 %>) <%= c.problem %><%= (i + 1 == challenges.length) ? '.' : ';' %></span>
+      <span> (<%= i + 1 %>) <%= c.problem %><%= (i + 1 == challenges.size) ? '.' : ';' %></span>
     <% end %>
-    <span> I addressed <%= challenges.count > 1 ? 'these' : 'this' %> <%= 'challenge'.pluralize(challenges.count) %> by doing the folowing: </span>
+    <span> My <%= 'solution'.pluralize(challenges.size) %> to <%= challenges.size > 1 ? 'these were' : 'this was' %>: </span>
     <% challenges.each_with_index do |c, i| %>
-      <span> (<%= i  + 1 %>) <%= c.solution %><%= (i + 1 == challenges.length) ? '.' : ';' %></span>
+      <span> (<%= i  + 1 %>) <%= c.solution %><%= (i + 1 == challenges.size) ? '.' : ';' %></span>
     <% end %>
   <% end %>
   <% if benefits.present? %>
-    <span> This benefited Metova for the following <%= 'reason'.pluralize(benefits.count) %>: </span>
+    <span> Overall, this benefited Metova because: </span>
     <% benefits.each_with_index do |b, i| %>
-      <span> (<%= i  + 1 %>) <%= b.description %><%= (i + 1 == benefits.length) ? '.' : ';' %></span>
+      <span> (<%= i  + 1 %>) <%= b.description %><%= (i + 1 == benefits.size) ? '.' : ';' %></span>
     <% end %>
   <% end %>
 </span>
