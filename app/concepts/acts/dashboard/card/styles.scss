@@ -1,3 +1,18 @@
+.act-wrapper {
+  @include outer-container;
+  .act-info {
+    @include span-columns(10);
+  }
+  .act-actions {
+    @include span-columns(2);
+  }
+}
+
+
+
+
+// Expander styles
+
 .expander {
   $base-font-size: 1em !default;
   $base-line-height: 1.5em !default;
@@ -11,7 +26,7 @@
   $expander-toggle-arrow-size: $expander-toggle-size;
   $expander-toggle-margin: 1em;
 
-  width: 60%;
+  width: 100%;
 
   .expander-trigger {
     border-bottom: 1px solid $light-gray;
