@@ -1,3 +1,7 @@
+form {
+  padding-top: 50px;
+}
+
 #submit-button {
   background-color: green;
 }
@@ -6,12 +10,51 @@
   background-color: orange;
   width: 131px;
   text-align: center;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.submit-button-wrapper {
+  text-align: right;
+}
+
+.form-button-wrapper {
+  margin-bottom: 25px;
 }
 
 .remove-challenge-x, .remove-benefit-x {
   font-size: xx-large;
   &:after {
     content: '\d7'
+  }
+}
+
+.challenge-input-wrapper, .benefit-input-wrapper {
+  @include outer-container;
+  .challenge-inputs, .benefit-input {
+    @include span-columns(10);
+    @include omega();
+  }
+  .remove-challenge-wrapper, .remove-benefit-wrapper  {
+    @include span-columns(2);
+    text-align: center;
+    .remove-challenge-x::after , .remove-benefit-x::after {
+      font-size: 50px;
+      color: red;
+    }
+  }
+  .remove-benefit-wrapper {
+    padding-top: 1em;
+  }
+  .remove-challenge-wrapper  {
+    padding-top: 4em;
+  }
+}
+
+.form-button-wrapper {
+  @include outer-container;
+  .submit-button-wrapper, .modal-button-wrapper {
+    @include span-columns(6);
   }
 }
 

@@ -10,12 +10,12 @@ $ ->
     maxItems: null
 
   $(document.body).on 'click', '.remove-challenge-x', ->
-    if confirm "Are you sure?"
-      $(this).parent().parent().remove()
+    # if confirm "Are you sure?"
+    $(this).parent().parent().remove()
 
   $(document.body).on 'click', '.remove-benefit-x', ->
-    if confirm "Are you sure?"
-      $(this).parent().parent().remove()
+    # if confirm "Are you sure?"
+    $(this).parent().parent().remove()
 
   $('addchallenge').on 'click', ->
     $(@).parent().prev().append("
