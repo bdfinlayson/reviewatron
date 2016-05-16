@@ -29,5 +29,17 @@ module Acts::Form::Cell
       When { Quality.first.update(assertion: "This is a test", core_value: CoreValue.find_by(name: "Honesty"))}
       Then { c.quality_assertion(Quality.first) == 'This is a test (HONESTY)'}
     end
+
+    context '#button_text' do
+      context 'returns update' do
+        let(:model) { cell.(Act.first) }
+        it { expect(model.button_text).to eq 'Update Act' }
+      end
+
+      context 'returns create' do
+        let(:model) { cell.(Act.new) }
+        it { expect(model.button_text).to eq 'Create Act' }
+      end
+    end
   end
 end

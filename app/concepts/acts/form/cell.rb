@@ -8,6 +8,14 @@ module Acts::Form::Cell
       Quality.where.not(id: qualities.try(:map) {|x| x.try(:id)})
     end
 
+    def button_text
+      if description.present?
+        'Update Act'
+      else
+        'Create Act'
+      end
+    end
+
     def quality_assertion(q)
       "#{q.assertion} #{value_name(q)}"
     end

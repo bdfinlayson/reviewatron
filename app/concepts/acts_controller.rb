@@ -14,6 +14,17 @@ class ActsController < ApplicationController
     redirect_to new_act_path, :flash => { :alert => @form.errors.full_messages.join(', ') }
   end
 
+  def edit
+    render html: cell(Acts::Form::Cell::Show, Act.find(params[:id])), layout: 'application'
+  end
+
+  def update
+    run Acts::Update do
+      return redirect_to acts_path, :flash => { :notice => "Act updated!" }
+    end
+    redirect_to edit_act_path(@model), :flash => { :alert => @form.errors.full_messages.join(', ') }
+  end
+
   def process_params!(params)
     params.require(:act).merge!(user: current_user)
   end

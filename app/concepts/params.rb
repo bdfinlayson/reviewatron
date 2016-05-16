@@ -8,6 +8,7 @@ module Params
     end
 
     def process(params)
+      params[:act][:id] = params[:id] if params[:id].present?
       params[:act][:description] = remove_ending_punctuation(params[:act][:description])
       params[:act][:qualities] = Quality.where(id: params[:act][:qualities])
       params[:act][:challenges] = params[:act][:challenges].values if params[:act][:challenges].respond_to? :values

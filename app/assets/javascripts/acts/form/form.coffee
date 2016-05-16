@@ -21,8 +21,8 @@ $ ->
     $(@).parent().prev().append("
       <div class='challenge-input-wrapper'>
         <div class='challenge-inputs'>
-          <span>Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='problem' placeholder='For example, you could say: \"Deadlines made it challenging to write tests\"'></textarea>
-          <span>Solution to Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='solution' placeholder='For example, you could say: \"We explained the need for testing to the client and were given more time\"'></textarea>
+          <span>Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='problem' placeholder='For example: \"Deadlines made it challenging to write tests\"'></textarea>
+          <span>Solution to Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='solution' placeholder='For example: \"We explained the need for testing to the client and were given more time\"'></textarea>
         </div>
         <div class='remove-challenge-wrapper'>
           <div class='remove-challenge-x'></div>
@@ -35,7 +35,7 @@ $ ->
     $(@).prev().append("
     <div class='benefit-input-wrapper'>
       <div class='benefit-input'>
-        <span>Benefit:</span><textarea class='benefit' name='act[benefits][]' placeholder='For example, you could say: \"Client satisfaction was raised following fewer incidences of bug reports due to greater test coverage\"'></textarea>
+        <span>Benefit:</span><textarea class='benefit' name='act[benefits][]' placeholder='For example: \"Client satisfaction was raised following fewer incidences of bug reports due to greater test coverage\"'></textarea>
       </div>
       <div class='remove-benefit-wrapper'>
         <div class='remove-benefit-x'></div>

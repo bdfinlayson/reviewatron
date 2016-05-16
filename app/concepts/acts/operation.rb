@@ -24,4 +24,8 @@ module Acts
       Params::Service.new(params).processed_params
     end
   end
+
+  class Update < Create
+    action :update
+  end
 end
