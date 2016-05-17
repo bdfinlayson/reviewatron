@@ -48,6 +48,11 @@
   &.is-visible {
     transform: translateX(0);
   }
+  .log-out {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
 
 .sliding-panel-button {
