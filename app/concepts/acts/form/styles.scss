@@ -1,5 +1,5 @@
 form {
-  padding-top: 50px;
+  padding-right: 50px;
 }
 
 #submit-button {
@@ -36,11 +36,11 @@ addbenefit, addchallenge {
 .challenge-input-wrapper, .benefit-input-wrapper {
   @include outer-container;
   .challenge-inputs, .benefit-input {
-    @include span-columns(10);
+    @include span-columns(11);
     @include omega();
   }
   .remove-challenge-wrapper, .remove-benefit-wrapper  {
-    @include span-columns(2);
+    @include span-columns(1);
     text-align: center;
     .remove-challenge-x::after , .remove-benefit-x::after {
       font-size: 50px;

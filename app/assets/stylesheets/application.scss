@@ -5,15 +5,12 @@
 @import 'selectize';
 @import '../concepts/acts/form/styles';
 @import '../concepts/acts/dashboard/card/styles';
+@import '../concepts/acts/navbar/styles';
 
 
 main.container {
   padding-left: 250px;
-  padding-right: 250px;
   height: 100%;
   overflow: auto;
-  @include media(max-width 850px) {
-    width: 100%;
-    padding: 0;
-  }
+  min-width: 700px;
 }

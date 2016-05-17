@@ -1,10 +1,11 @@
 .act-wrapper {
   @include outer-container;
+  padding-bottom: 15px;
   .act-info {
-    @include span-columns(10);
+    @include span-columns(11);
   }
   .act-actions {
-    @include span-columns(2);
+    @include span-columns(1);
   }
 }
 
