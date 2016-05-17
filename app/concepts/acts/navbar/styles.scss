@@ -1,3 +1,20 @@
+.logo {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  text-align: center;
+  background: red;
+  div {
+    position: absolute;
+    bottom: 0;
+    font-size: larger;
+    width: 100%;
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+}
+
+
 .sliding-panel-content {
   $action-color: #477DCA !default;
   $dark-gray: #333 !default;

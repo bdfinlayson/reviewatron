@@ -33,6 +33,11 @@ addbenefit, addchallenge {
   }
 }
 
+.selectize-control.multi > .selectize-input > div {
+  background-color: orange;
+  color: black;
+}
+
 .challenge-input-wrapper, .benefit-input-wrapper {
   @include outer-container;
   .challenge-inputs, .benefit-input {
