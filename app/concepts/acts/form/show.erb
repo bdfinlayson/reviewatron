@@ -33,7 +33,7 @@
     <label class='form-label' for='values'>What Core Values were on display?</label>
     <select name="act[qualities][]" id='values' multiple class='selectize' placeholder='Find core values...'>
       <% qualities.each do |q| %>
-        <option selected value='<%= q.id %>'><%= q.assertion %></option>
+        <option selected value='<%= q.id %>'><%= quality_assertion(q) %></option>
       <% end %>
       <option value=''></option>
       <% unselected_qualities.each do |q| %>
