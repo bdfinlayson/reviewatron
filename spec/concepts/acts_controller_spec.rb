@@ -16,13 +16,13 @@ describe ActsController, type: :controller do
         act: {
           description: "blah",
           qualities: [Quality.first.id, Quality.second.id, Quality.third.id],
-          challenges: [["car trouble", "got car fixed"], ["challenging code", "studied longer hours"]],
+          challenges: ["car trouble", "got car fixed", "challenging code", "studied longer hours"],
           benefits: ["can get to work on time", "more confident programmer"]
            }}.to change(Act, :count).by(1)
       expect(Act.last.description).to eq 'blah'
       expect(Act.last.user).to eq User.first
       expect(Act.last.qualities).to match_array [Quality.first, Quality.second, Quality.third]
-      expect(Act.last.challenges).to match_array Challenge.last(2)
+      expect(Act.last.challenges).to match_array Challenge.last(4)
       expect(Act.last.benefits).to match_array Benefit.last(2)
       expect(flash[:notice]).to be_present
     end
@@ -54,6 +54,37 @@ describe ActsController, type: :controller do
       it { is_expected.to respond_with :success }
       it { is_expected.to respond_with_content_type :html }
       it { is_expected.to render_with_layout :application }
+    end
+  end
+
+  context '#update' do
+    context 'success' do
+      before do
+        sign_in User.first
+      end
+      it 'updates description' do
+        put :update, id: Act.first.id, act: {description: "Pobrecita como tu", qualities: Act.first.qualities.map(&:id)}
+        expect(Act.first.description).to eq "Pobrecita como tu"
+      end
+
+      it 'updates qualities' do
+        put :update, id: Act.first.id, act: {description: "Pobrecita como tu", qualities: [Quality.last.id]}
+        expect(Act.first.qualities).to match_array [Quality.last]
+      end
+
+      it 'updates challenges' do
+        expect(Act.first.challenges).to be_present
+        Act.first.challenges.first.update_attribute(:problem, "blah")
+        expect{put :update,
+          id: Act.first.id,
+          act: {
+            description: "Pobrecita como tu",
+            qualities: [Quality.last.id],
+            challenges: ["Can't sleep at night", "Coding all the time", "All fun and no play", Act.first.challenges.map(&:problem)].flatten
+            }
+          }.to change(Challenge, :count).by(3)
+        expect(Act.first.challenges.map(&:problem)).to match_array ["blah", "Can't sleep at night", "Coding all the time", "All fun and no play"]
+      end
     end
   end
 end
