@@ -11,21 +11,6 @@ form {
   }
 }
 
-#submit-button {
-  background-color: green;
-}
-
-#preview-button {
-  background-color: orange;
-  width: 131px;
-  text-align: center;
-  border-radius: 3px;
-  padding: 8px;
-  &:hover {
-    background: rgba(255, 165, 0, 0.78);
-  }
-}
-
 addbenefit, addchallenge {
   color: blue;
 }
@@ -67,29 +52,40 @@ addbenefit, addchallenge {
   margin-right: 0;
   margin-left: 0;
   max-width: none;
+
+  #preview-button {
+    background-color: orange;
+    width: 131px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 8px;
+    &:hover {
+      background: rgba(255, 165, 0, 0.78);
+    }
+  }
+
   .modal-button-wrapper {
     @include span-columns(6);
   }
   .submit-button-wrapper {
-    @include outer-container;
+    display: flex;
+    justify-content: flex-end;
     text-align: right;
+    .delete {
+      background: red;
+      margin-right: 15px;
+      &:hover {
+        background: orangered;
+      }
+    }
     .submit {
-      @include span-columns(6);
       #submit-button {
+        background-color: green;
         &:hover {
           background-color: forestgreen;
         }
       }
     }
-    .delete {
-      @include span-columns(6);
-      background: red;
-      &:hover {
-        background: orangered;
-      }
-    }
-    display: flex;
-    justify-content: flex-end;
   }
 }
 
