@@ -17,7 +17,7 @@ $ ->
     $(@).parent().prev().append("
       <div class='challenge-input-wrapper'>
         <div class='challenge-inputs'>
-          <span>Problem:</span><textarea name='act[challenges][]' class='problem' placeholder='For example: \"Deadlines made it challenging to write tests\"'></textarea>
+          <span>Challenge:</span><textarea name='act[challenges][]' class='problem' placeholder='For example: \"Deadlines made it challenging to write tests\"'></textarea>
         </div>
         <div class='remove-challenge-wrapper'>
           <div class='remove-challenge-x'></div>

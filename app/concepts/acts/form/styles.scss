@@ -1,5 +1,10 @@
 form {
   padding-right: 50px;
+  .form-label {
+    line-height: 3em;
+    font-weight: 100;
+    font-style: italic;
+  }
 }
 
 #submit-button {
