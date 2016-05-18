@@ -15,8 +15,7 @@ module Params
       params[:act][:challenges] =
         Array(params[:act][:challenges]).each.map do |challenge|
           Challenge.create(
-            problem: remove_ending_punctuation(challenge.first),
-            solution: remove_ending_punctuation(challenge.second)
+            problem: remove_ending_punctuation(challenge.first)
           )
         end
       params[:act][:benefits] =

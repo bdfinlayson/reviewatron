@@ -43,16 +43,11 @@ addbenefit, addchallenge {
   .remove-challenge-wrapper, .remove-benefit-wrapper  {
     @include span-columns(1);
     text-align: center;
+    padding-top: 1em;
     .remove-challenge-x::after , .remove-benefit-x::after {
       font-size: 50px;
       color: red;
     }
-  }
-  .remove-benefit-wrapper {
-    padding-top: 1em;
-  }
-  .remove-challenge-wrapper  {
-    padding-top: 4em;
   }
 }
 

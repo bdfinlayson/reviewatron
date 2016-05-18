@@ -32,7 +32,7 @@ class Seeder
 
     # create challenges
     Act.all.each do |act|
-      act.challenges.push Challenge.create(problem: FFaker::Lorem.paragraph, solution: FFaker::Lorem.paragraph)
+      act.challenges.push Challenge.create(problem: FFaker::Lorem.paragraph)
     end
 
     # create benefits

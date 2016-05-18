@@ -37,11 +37,10 @@
   <challenges>
     <label>What challenges were faced? How were they overcome?</label>
     <% if challenges.present? %>
-      <% challenges.each_with_index do |challenge, i| %>
+      <% challenges.each do |challenge| %>
         <div class='challenge-input-wrapper'>
           <div class='challenge-inputs'>
-              <span>Problem:</span><textarea name='act[challenges][<%= i + 100 %>][]' class='problem' placeholder='For example: "Deadlines made it challenging to write tests"'><%= challenge.problem %></textarea>
-              <span>Solution to Problem:</span><textarea name='act[challenges][<%= i + 100 %>][]' class='solution' placeholder='For example: "We explained the need for testing to the client and were given more time"'><%= challenge.solution %></textarea>
+              <span>Problem:</span><textarea name='act[challenges][]' class='problem' placeholder='For example: "Deadlines made it challenging to write tests"'><%= challenge.problem %></textarea>
             </div>
             <div class='remove-challenge-wrapper'>
               <div class='remove-challenge-x'></div>

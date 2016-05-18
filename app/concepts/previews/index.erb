@@ -4,10 +4,6 @@
     <% challenges.each_with_index do |c, i| %>
       <span> (<%= i + 1 %>) <%= c.problem %><%= (i + 1 == challenges.size) ? '.' : ';' %></span>
     <% end %>
-    <span> My <%= 'solution'.pluralize(challenges.size) %> to <%= challenges.size > 1 ? 'these were' : 'this was' %>: </span>
-    <% challenges.each_with_index do |c, i| %>
-      <span> (<%= i  + 1 %>) <%= c.solution %><%= (i + 1 == challenges.size) ? '.' : ';' %></span>
-    <% end %>
   <% end %>
   <% if benefits.present? %>
     <span> Overall, this benefited Metova because: </span>

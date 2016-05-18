@@ -4,7 +4,6 @@ module Acts::Dashboard::Card::Cell
     property :core_values
     property :qualities
     property :challenges
-    property :solutions
     property :benefits
   end
 end

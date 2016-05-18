@@ -1,9 +1,5 @@
 $ ->
 
-  challengeCount = 0
-  benefitCount = 0
-
-
   $('#values').selectize
     plugins: ['remove_button']
     persist: false
@@ -21,8 +17,7 @@ $ ->
     $(@).parent().prev().append("
       <div class='challenge-input-wrapper'>
         <div class='challenge-inputs'>
-          <span>Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='problem' placeholder='For example: \"Deadlines made it challenging to write tests\"'></textarea>
-          <span>Solution to Problem:</span><textarea name='act[challenges][#{challengeCount}][]' class='solution' placeholder='For example: \"We explained the need for testing to the client and were given more time\"'></textarea>
+          <span>Problem:</span><textarea name='act[challenges][]' class='problem' placeholder='For example: \"Deadlines made it challenging to write tests\"'></textarea>
         </div>
         <div class='remove-challenge-wrapper'>
           <div class='remove-challenge-x'></div>
@@ -62,17 +57,9 @@ $ ->
     qualities = []
     $('.item').each ->
       qualities.push $(this).attr('data-value')
-    problems = []
-    $('.problem').each ->
-      problems.push $(this).val()
-    solutions = []
-    $('.solution').each ->
-      solutions.push $(this).val()
     challenges = []
-    i = 0
-    while i < problems.length
-      challenges[i] = Array(problems[i], solutions[i])
-      ++i
+    $('.problem').each ->
+      challenges.push $(this).val()
     benefits = []
     $('.benefit').each ->
       benefits.push $(this).val()
