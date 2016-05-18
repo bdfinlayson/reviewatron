@@ -85,6 +85,30 @@ describe ActsController, type: :controller do
           }.to change(Challenge, :count).by(3)
         expect(Act.first.challenges.map(&:problem)).to match_array ["blah", "Can't sleep at night", "Coding all the time", "All fun and no play"]
       end
+
+      it 'updates benefits' do
+        expect(Act.first.benefits).to be_present
+        Act.first.benefits.first.update_attribute(:description, "blah")
+        expect{put :update,
+          id: Act.first.id,
+          act: {
+            description: "Pobrecita como tu",
+            qualities: [Quality.last.id],
+            benefits: ["Can't sleep at night", "Coding all the time", "All fun and no play", Act.first.challenges.map(&:problem)].flatten
+            }
+          }.to change(Benefit, :count).by(3)
+        expect(Act.first.benefits.map(&:description)).to match_array ["blah", "Can't sleep at night", "Coding all the time", "All fun and no play"]
+      end
+    end
+
+    context 'failure' do
+      before do
+        sign_in User.first
+      end
+      it 'with no params' do
+        put :update, id: Act.first.id, act: { description: '', qualities: []}
+        expect(response).to redirect_to(edit_act_path(Act.first.id))
+      end
     end
   end
 end
