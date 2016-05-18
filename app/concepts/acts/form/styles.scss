@@ -39,11 +39,14 @@ addbenefit, addchallenge {
     @include span-columns(1);
     text-align: center;
     padding-top: 2em;
+    float:right;
     .remove-challenge-x::after , .remove-benefit-x::after {
       font-size: 50px;
       color: red;
     }
   }
+  max-width: none;
+  margin-left: 0;
 }
 
 .form-button-wrapper {
