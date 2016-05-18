@@ -88,16 +88,16 @@ describe ActsController, type: :controller do
 
       it 'updates benefits' do
         expect(Act.first.benefits).to be_present
-        Act.first.benefits.first.update_attribute(:description, "blah")
+        Act.first.benefits.destroy_all
         expect{put :update,
           id: Act.first.id,
           act: {
             description: "Pobrecita como tu",
             qualities: [Quality.last.id],
-            benefits: ["Can't sleep at night", "Coding all the time", "All fun and no play", Act.first.challenges.map(&:problem)].flatten
+            benefits: ["Can't sleep at night", "Coding all the time", "All fun and no play"]
             }
           }.to change(Benefit, :count).by(3)
-        expect(Act.first.benefits.map(&:description)).to match_array ["blah", "Can't sleep at night", "Coding all the time", "All fun and no play"]
+        expect(Act.first.benefits.map(&:description)).to match_array ["Can't sleep at night", "Coding all the time", "All fun and no play"]
       end
     end
 
