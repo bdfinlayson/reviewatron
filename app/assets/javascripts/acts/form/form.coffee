@@ -7,7 +7,7 @@ $ ->
   $('#values').selectize
     plugins: ['remove_button']
     persist: false
-    maxItems: null
+    maxItems: 3
 
   $(document.body).on 'click', '.remove-challenge-x', ->
     # if confirm "Are you sure?"

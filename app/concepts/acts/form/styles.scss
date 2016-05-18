@@ -22,10 +22,6 @@ addbenefit, addchallenge {
   text-align: right;
 }
 
-.form-button-wrapper {
-  margin-bottom: 25px;
-}
-
 .remove-challenge-x, .remove-benefit-x {
   font-size: xx-large;
   &:after {
@@ -62,6 +58,10 @@ addbenefit, addchallenge {
 
 .form-button-wrapper {
   @include outer-container;
+  margin-bottom: 25px;
+  margin-right: 0;
+  margin-left: 0;
+  max-width: none;
   .submit-button-wrapper, .modal-button-wrapper {
     @include span-columns(6);
   }
