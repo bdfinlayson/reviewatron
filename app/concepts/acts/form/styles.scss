@@ -17,12 +17,7 @@ addbenefit, addchallenge {
 
 
 
-.remove-challenge-x, .remove-benefit-x {
-  font-size: xx-large;
-  &:after {
-    content: '\d7'
-  }
-}
+
 
 .selectize-control.multi > .selectize-input > div {
   background-color: orange;
@@ -40,9 +35,17 @@ addbenefit, addchallenge {
     text-align: center;
     padding-top: 2em;
     float:right;
-    .remove-challenge-x::after , .remove-benefit-x::after {
-      font-size: 50px;
-      color: red;
+
+    .remove-challenge-x, .remove-benefit-x {
+      font-size: xx-large;
+      &:after {
+        content: '\d7';
+        font-size: 50px;
+        color: red;
+      }
+      &:hover:after {
+        color: rgba(255, 0, 0, 0.47);
+      }
     }
   }
   max-width: none;
