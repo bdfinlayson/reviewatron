@@ -10,9 +10,9 @@ module Acts::Form::Cell
 
     def button_text
       if description.present?
-        'Update Act'
+        'Update Accomplishment'
       else
-        'Create Act'
+        'Create Accomplishment'
       end
     end
 

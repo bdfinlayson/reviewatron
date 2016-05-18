@@ -1,14 +1,12 @@
 <span><%= description %>.
   <% if challenges.present? %>
-    <span> In doing this, the  <%= 'challenge'.pluralize(challenges.size) %> I faced <%= challenges.size > 1 ? 'were' : 'was' %>:</span>
-    <% challenges.each_with_index do |c, i| %>
-      <span> (<%= i + 1 %>) <%= c.problem %><%= (i + 1 == challenges.size) ? '.' : ';' %></span>
+    <% challenges.each do |c| %>
+      <span> <%= c.problem %>.</span>
     <% end %>
   <% end %>
   <% if benefits.present? %>
-    <span> Overall, this benefited Metova because: </span>
-    <% benefits.each_with_index do |b, i| %>
-      <span> (<%= i  + 1 %>) <%= b.description %><%= (i + 1 == benefits.size) ? '.' : ';' %></span>
+    <% benefits.each do |b| %>
+      <span> <%= b.description %>.</span>
     <% end %>
   <% end %>
 </span>

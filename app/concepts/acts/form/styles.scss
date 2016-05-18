@@ -17,15 +17,16 @@ form {
   text-align: center;
   border-radius: 3px;
   padding: 8px;
+  &:hover {
+    background: rgba(255, 165, 0, 0.78);
+  }
 }
 
 addbenefit, addchallenge {
   color: blue;
 }
 
-.submit-button-wrapper {
-  text-align: right;
-}
+
 
 .remove-challenge-x, .remove-benefit-x {
   font-size: xx-large;
@@ -62,8 +63,29 @@ addbenefit, addchallenge {
   margin-right: 0;
   margin-left: 0;
   max-width: none;
-  .submit-button-wrapper, .modal-button-wrapper {
+  .modal-button-wrapper {
     @include span-columns(6);
+  }
+  .submit-button-wrapper {
+    @include outer-container;
+    text-align: right;
+    .submit {
+      @include span-columns(6);
+      #submit-button {
+        &:hover {
+          background-color: forestgreen;
+        }
+      }
+    }
+    .delete {
+      @include span-columns(6);
+      background: red;
+      &:hover {
+        background: orangered;
+      }
+    }
+    display: flex;
+    justify-content: flex-end;
   }
 }
 

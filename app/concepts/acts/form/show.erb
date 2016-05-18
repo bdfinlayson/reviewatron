@@ -17,7 +17,14 @@
       </div>
     </div>
     <div class='submit-button-wrapper'>
-      <%= f.submit button_text, id:'submit-button', value: "Create Accomplishment" %>
+      <% if button_text.include? 'Update' %>
+        <button class='delete'>
+          Delete
+        </button>
+      <% end %>
+      <div class='submit'>
+        <%= f.submit button_text, id:'submit-button'%>
+      </div>
     </div>
   </div>
   <%= f.label :description, "What did you achieve?", class: 'form-label' %>

@@ -19,7 +19,7 @@ module Params
     end
 
     def remove_ending_punctuation(str)
-      str.gsub(/(\.|\,|\;|\:)$/, "").squish
+      str.gsub(/(\.|\,|\;|\:|\!)$/, "").squish
     end
   end
 end
