@@ -53,7 +53,7 @@ addbenefit, addchallenge {
   .remove-challenge-wrapper, .remove-benefit-wrapper  {
     @include span-columns(1);
     text-align: center;
-    padding-top: 1em;
+    padding-top: 2em;
     .remove-challenge-x::after , .remove-benefit-x::after {
       font-size: 50px;
       color: red;
