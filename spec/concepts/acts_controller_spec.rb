@@ -45,6 +45,30 @@ describe ActsController, type: :controller do
     end
   end
 
+  context '#destroy' do
+    before do
+      sign_in User.first
+    end
+    context 'success' do
+      it 'deletes' do
+        expect{delete :destroy, id: User.first.acts.first.id}.to change(Act, :count).by(-1)
+      end
+      it 'flashes notice' do
+        delete :destroy, id: User.first.acts.first.id
+        expect(flash[:notice]).to be_present
+      end
+    end
+    context 'failure' do
+      it 'does not delete' do
+        expect{delete :destroy, id: 9999999}.to change(Act, :count).by(0)
+      end
+      it 'flashes alert' do
+        delete :destroy, id: 99999999
+        expect(flash[:alert]).to be_present
+      end
+    end
+  end
+
   context '#edit' do
     context 'success' do
       before do

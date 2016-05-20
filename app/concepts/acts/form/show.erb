@@ -18,9 +18,7 @@
     </div>
     <div class='submit-button-wrapper'>
       <% if button_text.include? 'Update' %>
-        <button type='button' class='delete'>
-          Delete
-        </button>
+        <%= button_to("Delete", acts_path(id), remote: true, type: 'button', method: 'delete', class:'delete') %>
       <% end %>
       <div class='submit'>
         <%= f.submit button_text, id:'submit-button'%>

@@ -33,12 +33,12 @@ module Acts::Form::Cell
     context '#button_text' do
       context 'returns update' do
         let(:model) { cell.(Act.first) }
-        it { expect(model.button_text).to eq 'Update Act' }
+        it { expect(model.button_text).to eq 'Update Accomplishment' }
       end
 
       context 'returns create' do
         let(:model) { cell.(Act.new) }
-        it { expect(model.button_text).to eq 'Create Act' }
+        it { expect(model.button_text).to eq 'Create Accomplishment' }
       end
     end
   end
