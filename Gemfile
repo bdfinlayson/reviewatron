@@ -24,6 +24,8 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'sass'
+gem 'dry-types'
+gem 'virtus'
 
 group :production do
   gem 'rails_12factor'
