@@ -39,6 +39,9 @@
     padding-bottom: $expander-toggle-size / 4;
     text-decoration: none;
     user-select: none;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
     &::before {
       content: "\25BC";
