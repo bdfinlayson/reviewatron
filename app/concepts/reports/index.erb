@@ -1,4 +1,55 @@
 <%= cell('navbar/cell/show', nil) %>
 
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p>
+          <span>Name:</span>
+          <span>Bryan Finlayson</span>
+        </p>
+      </td>
+      <td>
+        <p>
+          <span>Current Position:</span>
+          <span>Rails Developer</span>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <span>Date:</span>
+          <span><%= DateTime.now.strftime("%B %d, %Y") %></span>
+        </p>
+      </td>
+      <td>
+        <p>
+          <span>Years at Metova:</span>
+          <span>1</span>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-blah!
+
+<h1>Core Values Evaluation</h1>
+
+<p>Describe your strengths and weaknesses in terms of our core values. Review the Manifesto to ensure you understand the meaning of each value. For areas where you feel you are weak, identify how you intend to improve yourself.</p>
+
+<% CoreValue.all.each do |cv| %>
+  <div>
+    <div>
+      <h2><%= cv.name %></h2>
+    </div>
+    <% cv.qualities.each do |q| %>
+      <p><%= q.question %></p>
+    <% end %>
+    <% User.first.acts.each do |act| %>
+      <% if act.core_values.include? cv %>
+        <p><%= cell('previews/cell/index', act) %></p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
