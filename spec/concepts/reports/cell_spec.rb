@@ -1,5 +1,5 @@
 module Reports::Cell
-  describe Show do
+  describe Index do
     context 'Judgement' do
       before do
         quality = CoreValue.find_by(name: 'Judgement').qualities.first

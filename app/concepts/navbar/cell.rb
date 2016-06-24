@@ -1,4 +1,4 @@
-module Acts::Navbar::Cell
+module Navbar::Cell
   class Show < Trailblazer::Cell
   end
 end

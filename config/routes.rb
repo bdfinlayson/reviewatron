@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'acts#new'
   resources :acts
   resources :previews, only: [:create]
+  resources :reports, only: [:index]
 end
