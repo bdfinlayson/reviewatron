@@ -38,18 +38,16 @@
 
 <p>Describe your strengths and weaknesses in terms of our core values. Review the Manifesto to ensure you understand the meaning of each value. For areas where you feel you are weak, identify how you intend to improve yourself.</p>
 
-<% CoreValue.all.each do |cv| %>
+<% core_values_order.each do |cv_name| %>
   <div>
     <div>
-      <h2><%= cv.name %></h2>
+      <h2><%= cv_name %></h2>
     </div>
-    <% cv.qualities.each do |q| %>
-      <p><%= q.question %></p>
+    <% core_values_qualities_questions(cv_name).each do |question| %>
+      <p><%= question %></p>
     <% end %>
-    <% User.first.acts.each do |act| %>
-      <% if act.core_values.include? cv %>
-        <p><%= cell('previews/cell/index', act) %></p>
-      <% end %>
+    <% core_value_acts(cv_name).each do |act| %>
+      <p><%= cell('previews/cell/index', act) %></p>
     <% end %>
   </div>
 <% end %>
